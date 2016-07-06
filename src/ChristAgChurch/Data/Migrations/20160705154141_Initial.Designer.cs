@@ -8,9 +8,10 @@ using ChristAgChurch.Data;
 namespace ChristAgChurch.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160705154141_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -30,10 +31,6 @@ namespace ChristAgChurch.Data.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
-
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
@@ -49,10 +46,6 @@ namespace ChristAgChurch.Data.Migrations
                     b.Property<string>("PhoneNumber");
 
                     b.Property<bool>("PhoneNumberConfirmed");
-
-                    b.Property<string>("ReceiveNotificationsByEmail");
-
-                    b.Property<string>("ReceiveNotificationsByPhone");
 
                     b.Property<string>("SecurityStamp");
 
@@ -71,42 +64,6 @@ namespace ChristAgChurch.Data.Migrations
                         .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("ChristAgChurch.Models.Event", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("EventDate");
-
-                    b.Property<string>("EventDescription");
-
-                    b.Property<string>("EventLocation");
-
-                    b.Property<string>("EventTitle");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Event");
-                });
-
-            modelBuilder.Entity("ChristAgChurch.Models.Service", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("ServiceDate");
-
-                    b.Property<string>("ServiceDescription");
-
-                    b.Property<string>("ServiceLocation");
-
-                    b.Property<string>("ServiceTitle");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Service");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole", b =>

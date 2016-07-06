@@ -1,0 +1,57 @@
+@model ChristAgChurch.Models.Event
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Event</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ID" />
+        <div class="form-group">
+            <label asp-for="EventDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EventDate" class="form-control" />
+                <span asp-validation-for="EventDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EventDescription" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EventDescription" class="form-control" />
+                <span asp-validation-for="EventDescription" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EventLocation" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EventLocation" class="form-control" />
+                <span asp-validation-for="EventLocation" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EventTitle" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EventTitle" class="form-control" />
+                <span asp-validation-for="EventTitle" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

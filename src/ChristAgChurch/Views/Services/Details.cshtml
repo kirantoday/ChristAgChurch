@@ -1,0 +1,42 @@
+@model ChristAgChurch.Models.Service
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Service</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceLocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceLocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceTitle)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
